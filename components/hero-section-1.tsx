@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import { ArrowRight, ChevronRight, Menu, X, Gavel } from 'lucide-react'
+import { ArrowRight, ChevronRight, Menu, X, Gavel, Scale } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { cn } from '@/lib/utils'
 import { Spotlight } from '@/components/ui/spotlight-new'
 import { FlipWords } from '@/components/ui/flip-words'
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 const transitionVariants = {
     item: {
@@ -67,14 +68,7 @@ export function HeroSection() {
                                     },
                                 },
                             }}
-                            className="absolute inset-0 -z-20">
-                            <img
-                                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                                alt="background"
-                                className="absolute inset-x-0 top-56 -z-20 hidden lg:top-32 dark:block"
-                                width="3276"
-                                height="4095"
-                            />
+                            className="absolute inset-0 -z-20" children={undefined}>
                         </AnimatedGroup>
                         <div aria-hidden className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,black_90%)]" />
                         <div className="mx-auto max-w-7xl px-6">
@@ -209,6 +203,7 @@ const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
+                                <Scale className="h-6 w-6 text-white" />
                                 <span className="font-bold text-xl tracking-tight text-white">LegalSnap</span>
                             </Link>
 
@@ -250,31 +245,48 @@ const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden', 'border-zinc-600 text-white hover:bg-zinc-800')}>
-                                    <Link href="#">
-                                        <span>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span>Sign Up</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
-                                        <span>Get Started</span>
-                                    </Link>
-                                </Button>
+                                <SignedIn>
+                                    <div className="flex items-center justify-center gap-3">
+                                        <Button
+                                            asChild
+                                            size="sm"
+                                            className={cn('border-zinc-600 text-white hover:bg-zinc-800')}
+                                        >
+                                            <Link href="/dashboard">
+                                                <span>Dashboard</span>
+                                            </Link>
+                                        </Button>
+                                        <UserButton afterSignOutUrl="/" />
+                                    </div>
+                                </SignedIn>
+                                <SignedOut>
+                                    <Button
+                                        asChild
+                                        size="sm"
+                                        className={cn(isScrolled && 'lg:hidden', 'border-zinc-600 text-white hover:bg-zinc-800')}>
+                                        <Link href="/sign-in">
+                                            <span>Login</span>
+                                        </Link>
+                                    </Button>
+                                    <Button
+                                        asChild
+                                        size="sm"
+                                        className={cn(isScrolled && 'lg:hidden', 'border-zinc-600 text-white hover:bg-zinc-800')}>
+                                        <Link href="/sign-up">
+                                            <span>Sign Up</span>
+                                        </Link>
+                                    </Button>
+                                </SignedOut>
+                                <SignedOut>
+                                    <Button
+                                        asChild
+                                        size="sm"
+                                        className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                                        <Link href="/sign-up">
+                                            <span>Get Started</span>
+                                        </Link>
+                                    </Button>
+                                </SignedOut>
                             </div>
                         </div>
                     </div>
