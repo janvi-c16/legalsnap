@@ -8,29 +8,41 @@ export type UserDetail = {
     name: string;
     email: string;
     credits: number;
-};
-
-const Provider = ({
+  };
+  const Provider = ({
     children,
-}: Readonly<{
+  }: Readonly<{
     children: React.ReactNode;
-}>) => {
-    const { user } = useUser()
+  }>) => {
+    const { user } = useUser();
     const [userDetail, setUserDetail] = useState<any>();
+  
     useEffect(() => {
-        user && CreateNewUser()
+      console.log("Provider useEffect triggered, user:", user);
+      user && createNewUser();
     }, [user]);
-    const CreateNewUser = async () => {
+  
+    const createNewUser = async () => {
+      try {
+        console.log("Creating new user...");
         const result = await axios.post("/api/users");
-        console.log(result.data)
-    }
+        console.log("API response:", result.data);
+        setUserDetail(result.data);
+      } catch (error) {
+        console.error("Error creating user:", error);
+        if (axios.isAxiosError(error)) {
+          console.error("Axios error details:", error.response?.data);
+        }
+      }
+    };
+  
     return (
-        <div>
-          <UserDetailContext.Provider value={{ userDetail, setUserDetail }}>
-            {children}
-          </UserDetailContext.Provider>
-        </div>
-      );
-}
-
-export default Provider;
+      <div>
+        <UserDetailContext.Provider value={{ userDetail, setUserDetail }}>
+          {children}
+        </UserDetailContext.Provider>
+      </div>
+    );
+  };
+  
+  export default Provider;
