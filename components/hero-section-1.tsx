@@ -108,12 +108,12 @@ export function HeroSection() {
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
                                     <div
                                         key={1}
-                                        className="bg-blue-600/10 rounded-[14px] border border-blue-500 p-0.5">
+                                        className="bg-blue-600/10 rounded-[14px] p-0.5">
                                         <Button
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base bg-blue-600 text-white hover:bg-blue-700">
-                                            <Link href="#features">
+                                            <Link href="/dashboard">
                                                 <span className="text-nowrap">Start Legal Consultation</span>
                                             </Link>
                                         </Button>

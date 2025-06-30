@@ -435,6 +435,7 @@ export default function LandingPage() {
             <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
               Join thousands of users who trust LegalSnap for their legal guidance
             </p>
+            <Link href={"/dashboard"}>
             <Button
               size="lg"
               variant="outline"
@@ -443,6 +444,7 @@ export default function LandingPage() {
               Start Legal Consultation Now
               <ArrowUpRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Button>
+            </Link>
         </motion.div>
       </div>
       </section>
@@ -620,20 +622,13 @@ const freeFeatures = [
   "Basic legal advice",
   "Standard response time",
   "Access to general templates",
-  "Email support",
 ];
 
 const premiumFeatures = [
   "Unlimited consultations",
   "Legal summary export",
   "Priority queue",
-  "Advanced legal analysis",
-  "Custom branding",
-  "Real-time collaboration",
-  "Export in all formats",
-  "Analytics and insights",
-  "API access",
-  "99.9% uptime SLA",
+  "Email support",
 ];
 
 const testimonials = [
