@@ -1,4 +1,5 @@
-import React from "react"
+"use client"
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { ArrowRight, Loader, Loader2 } from "lucide-react"
@@ -14,6 +15,8 @@ import {
 } from "@/components/ui/dialog"
 
 function AddNewSessionDialog() {
+    const [isLoading, setIsLoading] = useState(false)
+    const [note, setNot] = useState<string>()
     return (
         <Dialog>
             <DialogTrigger>
@@ -25,7 +28,7 @@ function AddNewSessionDialog() {
                     <DialogDescription asChild>
                         <div>
                             <h2>Add your Legal Issue or any other details</h2>
-                            <Textarea placeholder="Drop your Query" className="h-[200px] mt-1" />
+                            <Textarea placeholder="Drop your Query" className="h-[200px] mt-1" value={note} onChange={(e) => setNot(e.target.value)} />
                         </div>
                     </DialogDescription>
                 </DialogHeader>
@@ -33,8 +36,8 @@ function AddNewSessionDialog() {
                     <Button variant={'outline'}>
                         Cancel
                     </Button>
-                    <Button>
-                        Start
+                    <Button disabled={isLoading || !note}>
+                        {isLoading ? <Loader2 className="animate-spin" /> : "Start"}
                     </Button>
                 </DialogFooter>
             </DialogContent>
