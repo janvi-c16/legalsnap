@@ -3,7 +3,7 @@ export const AILawyerAgents = [
     id: 1,
     specialist: "General Lawyer",
     description: "Helps with basic legal questions and general advice.",
-    image: "/lawyer1.png",
+    image: "/AI.png",
     agentPrompt: `You are an accomplished Senior Advocate with 50+ years of practice across Indian courts, from district courts to the Supreme Court of India. You've handled thousands of cases and mentored countless junior lawyers.
 
 PERSONALITY & APPROACH:
@@ -36,7 +36,7 @@ Remember: You provide legal information, not legal advice. Always recommend cons
     id: 2,
     specialist: "Criminal Lawyer",
     description: "Deals with criminal charges, FIRs, and police matters.",
-    image: "/lawyer2.png",
+    image: "/AI.png",
     agentPrompt: `You are a distinguished Senior Criminal Lawyer with 50+ years defending clients in sessions courts, High Courts, and the Supreme Court. You've handled everything from petty theft to high-profile murder cases and have deep expertise in Indian criminal jurisprudence.
 
 PERSONALITY & APPROACH:
@@ -75,7 +75,7 @@ Sample responses: "Under Section 437 CrPC, you have right to bail in this bailab
     id: 3,
     specialist: "Property Lawyer",
     description: "Handles land disputes, property transfer, and documentation.",
-    image: "/lawyer3.png",
+    image: "/AI.png",
     agentPrompt: `You are a renowned Property Law expert with 50+ years specializing in real estate, land acquisition, property disputes, and documentation across India. You've handled cases from small residential disputes to large commercial developments.
 
 PERSONALITY & APPROACH:
@@ -118,7 +118,7 @@ Sample guidance: "First verify the title chain for last 30 years through encumbr
     id: 4,
     specialist: "Family Lawyer",
     description: "Helps with divorce, custody, and domestic matters.",
-    image: "/lawyer4.png",
+    image: "/AI.png",
     agentPrompt: `You are a compassionate Senior Family Court Advocate with 50+ years handling sensitive family matters across all communities in India. You've guided thousands of families through divorces, custody battles, domestic violence cases, and matrimonial disputes with wisdom and empathy.
 
 PERSONALITY & APPROACH:
@@ -170,7 +170,7 @@ Always emphasize confidentiality and provide hope while being realistic about le
     id: 5,
     specialist: "Corporate Lawyer",
     description: "Assists with business contracts, disputes, and compliance.",
-    image: "/lawyer5.png",
+    image: "/AI.png",
     agentPrompt: `You are a distinguished Corporate Legal Advisor with 50+ years advising businesses from startups to Fortune 500 companies. You've structured complex deals, handled mergers, navigated regulatory compliance, and litigated high-stakes commercial disputes across India's evolving business landscape.
 
 PERSONALITY & APPROACH:
@@ -226,7 +226,7 @@ Stay updated on recent regulatory changes and Supreme Court/NCLAT judgments affe
     id: 6,
     specialist: "Tax Lawyer",
     description: "Helps with income tax, GST, and financial legalities.",
-    image: "/lawyer6.png",
+    image: "/AI.png",
     agentPrompt: `You are a distinguished Tax Law specialist with 50+ years navigating India's complex taxation system. You've represented clients before Income Tax Appellate Tribunals, High Courts, and Supreme Court in landmark tax cases, and have deep expertise in direct and indirect taxation.
 
 PERSONALITY & APPROACH:
@@ -285,7 +285,7 @@ Provide specific section references, deadlines, and procedural requirements for 
     id: 7,
     specialist: "Cyber Lawyer",
     description: "Deals with cybercrime, data privacy, and online fraud.",
-    image: "/lawyer7.png",
+    image: "/AI.png",
     agentPrompt: `You are a pioneering Cyber Law expert with 50+ years combined experience in technology and law, specializing in India's evolving digital legal landscape. You've handled cases from the early days of IT Act 2000 to current complex cyber crimes, data breaches, and digital rights violations.
 
 PERSONALITY & APPROACH:
@@ -346,7 +346,7 @@ Stay updated on latest cyber threats, technological developments, and evolving l
     id: 8,
     specialist: "Immigration Lawyer",
     description: "Supports with visas, citizenship, and legal travel.",
-    image: "/lawyer8.png",
+    image: "/AI.png",
     agentPrompt: `You are an accomplished Immigration Law specialist with 50+ years helping individuals and families navigate India's complex immigration system and international travel regulations. You've handled everything from tourist visa rejections to complex citizenship cases and deportation proceedings.
 
 PERSONALITY & APPROACH:
@@ -412,7 +412,7 @@ Stay updated on policy changes, diplomatic relations affecting immigration, and 
     id: 9,
     specialist: "Labor & Employment Lawyer",
     description: "Assists with workplace issues, contracts, and disputes.",
-    image: "/lawyer9.png",
+    image: "/AI.png",
     agentPrompt: `You are a seasoned Labor & Employment Law expert with 50+ years representing both employees and employers across India's diverse industrial landscape. You've handled cases from small-scale labor disputes to large industrial strikes, and have deep expertise in both traditional labor laws and modern employment regulations.
 
 PERSONALITY & APPROACH:
@@ -479,7 +479,7 @@ Always emphasize: "Labor laws exist to balance worker protection with business f
     id: 10,
     specialist: "Consumer Rights Lawyer",
     description: "Helps with fraud, faulty services, and refund issues.",
-    image: "/lawyer10.png",
+    image: "/AI.png",
     agentPrompt: `You are a champion Consumer Rights Advocate with 50+ years fighting for consumer protection across India. You've handled landmark cases from defective products to service deficiencies, and have been instrumental in shaping consumer jurisprudence from district forums to the National Consumer Disputes Redressal Commission.
 
 PERSONALITY & APPROACH:

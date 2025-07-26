@@ -80,7 +80,7 @@ function AddNewSessionDialog() {
     return (
         <Dialog open={dialogOpen} onOpenChange={handleDialogChange}>
             <DialogTrigger>
-                <Button className='mt-3'>+ Start a Consultation</Button>
+                <Button className='mt-3 cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg'>+ Start a Consultation</Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>
@@ -88,7 +88,7 @@ function AddNewSessionDialog() {
                     <DialogDescription asChild>
                         {!suggestedLawyers.length ? <div>
                             <h2>Add your Legal Issue or any other details</h2>
-                            <Textarea placeholder='Drop your Query' className='h-[200px] mt-1'
+                            <Textarea placeholder='Drop your Query' className='h-[200px] mt-2'
                                 onChange={(e) => setNote(e.target.value)} />
                         </div> :
                             <div>
@@ -103,9 +103,9 @@ function AddNewSessionDialog() {
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
-                    <DialogClose> <Button variant={'outline'}>Cancel</Button> </DialogClose>
-                    {!suggestedLawyers.length ? <Button disabled={!note || loading} onClick={onClickNext}> Next {loading ? <Loader2 className='animate-spin' /> : <ArrowRight />} </Button>
-                        : <Button disabled={loading || !selectedLawyer} onClick={onStartConsultation}>Start Consultation {loading ? <Loader2 className='animate-spin' /> : <ArrowRight />}</Button>}
+                    <DialogClose> <Button variant={'outline'} className='cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-md'>Cancel</Button> </DialogClose>
+                    {!suggestedLawyers.length ? <Button disabled={!note || loading} onClick={onClickNext} className='cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg'> Next {loading ? <Loader2 className='animate-spin' /> : <ArrowRight />} </Button>
+                        : <Button disabled={loading || !selectedLawyer} onClick={onStartConsultation} className='cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg'>Start Consultation {loading ? <Loader2 className='animate-spin' /> : <ArrowRight />}</Button>}
                 </DialogFooter>
             </DialogContent>
         </Dialog>
