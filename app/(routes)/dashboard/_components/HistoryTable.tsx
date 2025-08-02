@@ -39,7 +39,7 @@ function HistoryTable({ HistoryList }: Props) {
                             <TableCell>{moment(new Date(record.createdAt)).fromNow()}</TableCell>
                             <TableCell className="text-right">
                                 <Button variant={"link"} size={"sm"}>
-                                    <ViewReportDialog record={record} />
+                                    {/* <ViewReportDialog record={record} /> */}
                                 </Button>
                             </TableCell>
                         </TableRow>
