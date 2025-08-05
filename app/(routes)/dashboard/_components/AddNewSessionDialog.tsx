@@ -43,13 +43,27 @@ function AddNewSessionDialog() {
             const result = await axios.post('/api/suggest-lawyers', { notes: note });
             if (Array.isArray(result.data) && result.data.length > 0) {
                 setSuggestedLawyers(result.data);
+                // Select the first lawyer by default
+                setSelectedLawyer(result.data[0]);
             } else if (result.data && result.data.error) {
-                alert('Error: ' + (typeof result.data.error === 'string' ? result.data.error : JSON.stringify(result.data.error)) + (result.data.details ? ('\nDetails: ' + result.data.details) : ''));
+                console.error('Error from API:', result.data.error);
+                // Fallback to using the first few lawyers from the list
+                const fallbackLawyers = AILawyerAgents.slice(0, 3);
+                setSuggestedLawyers(fallbackLawyers);
+                setSelectedLawyer(fallbackLawyers[0]);
             } else {
-                alert('No suggested lawyers found. Please try again.');
+                console.warn('No suggested lawyers found, using fallback');
+                // Fallback to using the first few lawyers from the list
+                const fallbackLawyers = AILawyerAgents.slice(0, 3);
+                setSuggestedLawyers(fallbackLawyers);
+                setSelectedLawyer(fallbackLawyers[0]);
             }
         } catch (error) {
-            alert('Failed to fetch suggested lawyers. Please try again.');
+            console.error('Failed to fetch suggested lawyers:', error);
+            // Fallback to using the first few lawyers from the list
+            const fallbackLawyers = AILawyerAgents.slice(0, 3);
+            setSuggestedLawyers(fallbackLawyers);
+            setSelectedLawyer(fallbackLawyers[0]);
         }
         setLoading(false)
     }

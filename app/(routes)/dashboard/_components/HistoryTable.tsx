@@ -11,6 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { SessionDetails } from "./HistoryList";
 import moment from "moment";
+import ViewLegalReportDialog from "./ViewLegalReportDialog";
 
 type Props = {
     HistoryList: SessionDetails[];
@@ -39,7 +40,7 @@ function HistoryTable({ HistoryList }: Props) {
                             <TableCell>{moment(new Date(record.createdAt)).fromNow()}</TableCell>
                             <TableCell className="text-right">
                                 <Button variant={"link"} size={"sm"}>
-                                    {/* <ViewReportDialog record={record} /> */}
+                                    <ViewLegalReportDialog record={record} />
                                 </Button>
                             </TableCell>
                         </TableRow>

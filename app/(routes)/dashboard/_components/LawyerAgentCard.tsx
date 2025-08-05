@@ -15,17 +15,30 @@ type props = {
     lawyerAgent: lawyerAgent
 }
 
-function LawyerAgentCard({lawyerAgent}:props) {
-    return(
+function LawyerAgentCard({ lawyerAgent }: props) {
+    return (
         <div className="flex flex-col justify-between items-center w-[260px] h-[410px] bg-white border border-gray-200 rounded-2xl shadow-md p-4 transition-all duration-200 hover:shadow-lg hover:scale-[1.03]">
-            <Image src={lawyerAgent.image} alt={lawyerAgent.specialist} width={200} height={150} className="w-full h-[150px] object-contain rounded-xl mb-2"/>
-            <div className="flex-1 w-full flex flex-col items-center">
-                <h2 className="font-bold mt-1 text-lg text-center min-h-[48px]">{lawyerAgent.specialist}</h2>
-                <p className="text-gray-700 text-center mt-1 mb-2 break-words w-full">{lawyerAgent.description}</p>
+            <Image
+                src={lawyerAgent.image}
+                alt={lawyerAgent.specialist}
+                width={200}
+                height={230} // increased from 200
+                className="w-full h-[230px] object-contain rounded-xl mb-1"
+            />
+            <div className="flex flex-col items-center w-full">
+                <h2 className="font-semibold mt-0 text-[14px] text-center leading-tight text-gray-700">
+                    {lawyerAgent.specialist}
+                </h2>
+                <p className="text-gray-700 text-center mt-0.5 mb-1 break-words w-full text-xs line-clamp-2">
+                    {lawyerAgent.description}
+                </p>
             </div>
-            <Button className='w-full mt-2'>Consult</Button>
+            <Button className="w-full mt-0.5 h-9 text-sm">Consult</Button>
         </div>
-    )
+    );
 }
+
+
+
 
 export default LawyerAgentCard
